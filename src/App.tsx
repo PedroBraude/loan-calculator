@@ -12,16 +12,43 @@ function App() {
     setQuantity(+e.target.value);
   }
 
-  function formatToARS(number: number){
-    return number.toLocaleString('es-AR',{
-      style: 'currency',
-      currency: "ARS"
-    })
+  function formatToARS(number: number) {
+    return number.toLocaleString("es-AR", {
+      style: "currency",
+      currency: "ARS",
+    });
+  }
+
+  function handleClickDecrement() {
+    const value = quantity - STEP;
+    if (quantity > MIN) setQuantity(value);
+  }
+  function handleClickIncrement() {
+    const value = quantity + STEP;
+    if (quantity < MIN) setQuantity(value);
   }
 
   return (
     <div className="my-20 max-w-lg mx-auto bg-white shadow p-10">
       <Header />
+
+      <div className="flex justify-between my-6">
+        <button
+          type="button"
+          className="h-10 w-10 flex items-center justify-center font-bold text-white text-2xl bg-lime-500 rounded-full hover:outline-none hover:ring-2 hover:ring-offset-2 hover:ring-lime-500"
+          onClick={handleClickDecrement}
+        >
+          -
+        </button>
+
+        <button
+          type="button"
+          className="h-10 w-10 flex items-center justify-center font-bold text-white text-2xl bg-lime-500 rounded-full hover:outline-none hover:ring-2 hover:ring-offset-2 hover:ring-lime-500"
+          onClick={handleClickIncrement}
+        >
+          +
+        </button>
+      </div>
 
       <input
         type="range"
@@ -33,7 +60,9 @@ function App() {
         onChange={handleChangeRangeInput}
       />
 
-      <p className="text-center my-10 text-5xl font-extrabold text-indigo-600">{formatToARS(quantity)}</p>
+      <p className="text-center my-10 text-5xl font-extrabold text-indigo-600">
+        {formatToARS(quantity)}
+      </p>
     </div>
   );
 }
