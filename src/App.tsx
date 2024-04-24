@@ -2,7 +2,11 @@ import { useState } from "react";
 import Header from "./components/Header";
 
 function App() {
-  const [quantity, setQuantity] = useState(0); // returns an array. This is why we use destructuring.
+  const [quantity, setQuantity] = useState(10000); // returns an array. This is why we use destructuring.
+
+  const MIN = 0;
+  const MAX = 20000;
+  const STEP = 100;
 
   function handleChangeRangeInput(e: React.ChangeEvent<HTMLInputElement>) {
     setQuantity(+e.target.value);
@@ -22,7 +26,10 @@ function App() {
       <input
         type="range"
         className="w-full h-6 bg-gray-200 accent-lime-500 hover:accenter-lime-600"
-        max={1000000}
+        min={MIN}
+        max={MAX}
+        step={STEP}
+        value={quantity}
         onChange={handleChangeRangeInput}
       />
 
