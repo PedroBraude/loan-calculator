@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header";
+import Button from "./components/Button";
 
 function App() {
   const [quantity, setQuantity] = useState(10000); // returns an array. This is why we use destructuring.
@@ -25,7 +26,7 @@ function App() {
   }
   function handleClickIncrement() {
     const value = quantity + STEP;
-    if (quantity < MIN) setQuantity(value);
+    if (quantity < MAX) setQuantity(value);
   }
 
   return (
@@ -33,21 +34,16 @@ function App() {
       <Header />
 
       <div className="flex justify-between my-6">
-        <button
-          type="button"
-          className="h-10 w-10 flex items-center justify-center font-bold text-white text-2xl bg-lime-500 rounded-full hover:outline-none hover:ring-2 hover:ring-offset-2 hover:ring-lime-500"
-          onClick={handleClickDecrement}
-        >
-          -
-        </button>
-
-        <button
-          type="button"
-          className="h-10 w-10 flex items-center justify-center font-bold text-white text-2xl bg-lime-500 rounded-full hover:outline-none hover:ring-2 hover:ring-offset-2 hover:ring-lime-500"
-          onClick={handleClickIncrement}
-        >
-          +
-        </button>
+        <Button
+          operator='-'
+          fn={handleClickDecrement}
+        
+        />
+        <Button
+          operator='+'
+          fn={handleClickIncrement}
+        
+        />
       </div>
 
       <input
