@@ -15,6 +15,10 @@ This project is a loan calculator developed with React 18, Vite, and Tailwind CS
 - Instant calculations upon input value changes.
 - Responsive design adapted to all devices.
 
+## Demo
+
+- https://loan-calculator-braude.netlify.app/
+
 ## Installation
 
 To install and run this project locally, follow these steps:
