@@ -1,32 +1,28 @@
-import { useState } from "react";
-import Header from "./components/Header";
-import Button from "./components/Button";
+import { useState } from 'react'
+import Header from './components/Header'
+import Button from './components/Button'
+import { formatMoney } from './utils'
 
-function App() {
-  const [quantity, setQuantity] = useState(10000); // returns an array. This is why we use destructuring.
+export default function App() {
+  const [quantity, setQuantity] = useState(10000) // returns an array. This is why we use destructuring.
 
-  const MIN = 0;
-  const MAX = 20000;
-  const STEP = 100;
+  const MIN = 0
+  const MAX = 20000
+  const STEP = 100
 
-  function handleChangeRangeInput(e: React.ChangeEvent<HTMLInputElement>) {
-    setQuantity(+e.target.value);
-  }
-
-  function formatToARS(number: number) {
-    return number.toLocaleString("es-AR", {
-      style: "currency",
-      currency: "ARS",
-    });
+  function handleChangeRangeInput(
+    e: React.ChangeEvent<HTMLInputElement>
+  ) {
+    setQuantity(+e.target.value)
   }
 
   function handleClickDecrement() {
-    const value = quantity - STEP;
-    if (quantity > MIN) setQuantity(value);
+    const value = quantity - STEP
+    if (quantity > MIN) setQuantity(value)
   }
   function handleClickIncrement() {
-    const value = quantity + STEP;
-    if (quantity < MAX) setQuantity(value);
+    const value = quantity + STEP
+    if (quantity < MAX) setQuantity(value)
   }
 
   return (
@@ -34,16 +30,8 @@ function App() {
       <Header />
 
       <div className="flex justify-between my-6">
-        <Button
-          operator='-'
-          fn={handleClickDecrement}
-        
-        />
-        <Button
-          operator='+'
-          fn={handleClickIncrement}
-        
-        />
+        <Button operator="-" fn={handleClickDecrement} />
+        <Button operator="+" fn={handleClickIncrement} />
       </div>
 
       <input
@@ -57,10 +45,8 @@ function App() {
       />
 
       <p className="text-center my-10 text-5xl font-extrabold text-indigo-600">
-        {formatToARS(quantity)}
+        {formatMoney(quantity, 'USD', 'en-US')}
       </p>
     </div>
-  );
+  )
 }
-
-export default App;

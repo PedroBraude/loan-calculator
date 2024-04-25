@@ -1,4 +1,10 @@
-export default function Button({operator,fn}:{operator:string,fn: () => void}) {
+export default function Button({
+  operator,
+  fn,
+}: {
+  operator: string
+  fn: () => void
+}) {
   return (
     <button
       type="button"
