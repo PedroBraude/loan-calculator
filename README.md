@@ -1,6 +1,8 @@
 # Loan Calculator
 
-This project is a loan calculator developed with React 18, Vite, and Tailwind CSS. It allows users to calculate the total amount of loan payments based on the borrowed amount, interest rate, and time period.
+This project is a loan calculator developed with React 18, Vite,TypeScript and Tailwind CSS  as a practice application to enhance my web development skills. It allows users to calculate the total amount of loan payments based on the borrowed amount, interest rate, and time period.
+
+**Demo:** [Loan Calculator Live Demo](https://loan-calculator-braude.netlify.app/)
 
 ## Technologies Used
 
@@ -8,16 +10,17 @@ This project is a loan calculator developed with React 18, Vite, and Tailwind CS
 - **[Vite](https://vitejs.dev/)**: A build tool that provides a faster development environment.
 - **[Tailwind CSS](https://tailwindcss.com/)**: A CSS framework for rapid and responsive design.
 - **[Netlify](https://www.netlify.com/)**: A platform to automate deployments and manage modern web applications.
+- **[TypeScript](https://www.typescriptlang.org/)**: Is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale..
 
 ## Features
 
-- Simple and friendly interface for calculating loans.
-- Instant calculations upon input value changes.
-- Responsive design adapted to all devices.
-
-## Demo
-
-- https://loan-calculator-braude.netlify.app/
+- **Simple and User-Friendly Interface:** Provides an intuitive environment for calculating loan payments.
+- **Dynamic Payment Calculation:** Instantly calculates total payments and monthly installments based on the loan amount and term selected by the user.
+- **Responsive Design:** Fully adapted to all devices ensuring a seamless user experience on desktops, tablets, and mobiles.
+- **Interactive Input Controls:** Users can adjust the loan amount using a slider or direct input controls to increment or decrement the value.
+- **Formatted Currency Display:** Displays amounts in formatted currency, enhancing readability and user experience.
+- **Customizable Loan Terms:** Offers multiple term options (e.g., 6, 12, 24 months) which users can select to see how it affects their payment schedule.
+- **Detailed Summary of Payments:** Provides a clear breakdown of the total amount to pay and monthly payments, allowing users to understand their financial commitments better.
 
 ## Installation
 
